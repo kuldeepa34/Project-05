@@ -1,0 +1,35 @@
+.card{
+    background-image: url(../../assets/photo-1507208773393-40d9fc670acf.jpg);
+/* background-attachment: fixed; */
+background-size: cover;width:auto;
+  height: auto;
+  border: none;
+}
+.card-body{
+    background: linear-gradient(to right bottom, #ff9966c2  0%, #ff5e61c7 100%);
+    /* border: none; */
+}
+.form-control{
+    border-radius: 25px;
+    color:#695858;
+    background: rgba(255, 255, 255, 0.308);
+    height: 50px;
+    
+}
+.input-group-text {
+    
+    /* border: 2px solid red; */
+    border-radius: 25px;
+  }
+b{
+    color: blanchedalmond;
+}
+.required-field{
+    color: red;
+    padding-right: 100px;
+    float:right;
+    
+}
+.form-control.ng-invalid.ng-touched{
+    border-color: red;
+}

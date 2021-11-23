@@ -1,0 +1,106 @@
+
+<div class="row mr-0 pt-3 pb-3" >
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body shadow-lg">
+        <form>
+          <h2 *ngIf="!form.data.id>0" class="text-secondary text-center font-weight-bold">{{'Add College' | translate }}</h2>
+          <h2 *ngIf="form.data.id>0" class="text-secondary text-center font-weight-bold">{{'Update College' | translate }}</h2>
+
+          <div *ngIf="!form.error && form.message != null" class="alert alert-success alert-dismissible">
+            {{form.message}}
+          </div>
+
+          <div style="padding-top:3%">
+            <span class="pt-2"><b>{{'Name' | translate }}</b>
+              <span class="required-field" *ngIf="names.touched && !names.valid">College Name Is Required</span></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-user grey-text"></i> </div>
+                </div>
+                <input type="text" name="name" [(ngModel)]="form.data.name" class="form-control"
+                  placeholder="{{'Enter Name' | translate }}" names required ngModel  #names="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top:3%">
+            <span class="pt-2"><b>{{'Address' | translate }}</b>
+              <span class="required-field" *ngIf="address.touched && !address.valid">Address Is Required</span></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-map-marker grey-text"></i> </div>
+                </div>
+                <input type="text" name="addr" [(ngModel)]="form.data.address" class="form-control"
+                  placeholder="{{'Enter Address' | translate }}" address required address  #address="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top:3%">
+            <span class="pt-2"><b>{{'City' | translate }}</b>
+              <span class="required-field" *ngIf="city.touched && !city.valid">City Is Required</span></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-location-arrow grey-text"></i> </div>
+                </div>
+                <input type="text" name="city" [(ngModel)]="form.data.city" class="form-control"
+                  placeholder="{{'Enter City' | translate }}" city required ngModel  #city="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top:3%">
+            <span class="pt-2"><b>{{'State' | translate }}</b>
+              <span class="required-field" *ngIf="state.touched && !state.valid">State Is Required</span></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-address-card grey-text"></i> </div>
+                </div>
+                <input type="text" name="state" [(ngModel)]="form.data.state" class="form-control"
+                  placeholder="{{'Enter State' | translate }}" state required ngModel  #state="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top:3%">
+            <span class="pt-2"><b>{{'Phone No.' | translate }}</b>
+              <span class="required-field"  *ngIf="phoneNo.touched && !phoneNo.valid">Phone Number Is Required</span></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-phone grey-text"></i> </div>
+                </div>
+                <input type="text" name="phoneNo" [(ngModel)]="form.data.phoneNo" class="form-control"
+                  placeholder="{{'Enter Phone No.' | translate }}" phoneNo required ngModel  #phoneNo="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="row pt-3 pl-3 pb-3 justify-content-center">
+            <div class="pt-2">
+              <button *ngIf="!form.data.id>0" (click)="submit()"  class="btn btn-success mr-2">
+                {{'Save' | translate }}</button>
+            </div>
+            <div class="pt-2">
+              <button *ngIf="form.data.id>0" (click)="submit()" class="btn btn-success mr-2">
+                {{'Update' | translate }}</button>
+            </div>
+
+            <div class="pl-3 pt-2">
+              <button (click)="forward('/collegelist')" type="button"
+                class="btn btn-info mr-1">{{'List' | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

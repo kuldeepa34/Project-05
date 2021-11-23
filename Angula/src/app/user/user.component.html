@@ -1,0 +1,208 @@
+
+<div class="row " style="padding-top: 3%; padding-bottom:3%; ">
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body shadow-lg">
+        <form>
+          <h2 *ngIf="!form.data.id>0" class="text-secondary text-center font-weight-bold">{{'Add User'  | translate }}</h2>
+          <h2 *ngIf="form.data.id>0" class="text-secondary text-center font-weight-bold">{{'Update User'  | translate }}</h2>
+
+          
+          <div *ngIf="!form.error && form.message != null" class="alert alert-success alert-dismissible">
+           
+            {{form.message}}
+          </div>
+
+          <div style="padding-top:5%" >
+            <span class="pt-2"><b>{{'Role Name'  | translate }}</b></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-id-card grey-text"></i> </div>
+                </div>
+
+
+                <select class="form-control" name="roleId" [(ngModel)]="form.data.roleId" style="cursor: pointer;"  roleId required ngModel  #roleId="ngModel">
+                  <option *ngFor="let n of rol"[value]="n.id" disabled selected hidden>{{n.Name}}</option>
+                  <option *ngFor="let obj of form.preload.roleList" [value]="obj.id">{{obj.name}}</option>
+                </select>
+              </div>
+            </div>
+            <span class="text-danger mr-auto mb-auto " id="role"> {{form.inputerror.roleId}} </span>
+          </div>
+
+          <div  >
+            <span class="pt-2"><b>{{'First Name'  | translate }}</b></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-user-circle grey-text"></i> </div>
+                </div>
+                <input type="text" name="firstN" [(ngModel)]="form.data.firstName" class="form-control"
+                  placeholder="{{'Enter First Name'  | translate }}" firstN required ngModel  #firstN="ngModel">
+              </div>
+            </div>
+            <span class="text-danger mr-auto mb-auto " id="role"> {{form.inputerror.firstName}} </span>
+          </div>
+
+          <div  >
+            <span class="pt-2"><b>{{'Last Name'  | translate }}</b></span>
+
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-user grey-text"></i> </div>
+                </div>
+                <input type="text" name="lastN" [(ngModel)]="form.data.lastName" class="form-control"
+                  placeholder="{{'Enter Last Name'  | translate }}" lastN required ngModel  #lastN="ngModel">
+              </div>
+            </div>
+            <span class="text-danger mr-auto mb-auto " id="role"> {{form.inputerror.lastName}} </span>
+          </div>
+
+          <div  >
+            <span class="pt-2"><b>{{'login Id'  | translate }}</b></span>
+
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-envelope grey-text"></i> </div>
+                </div>
+                <input type="email" name="login" [(ngModel)]="form.data.login" class="form-control"
+                  placeholder="{{'Enter Login Id'  | translate }}" login required ngModel  #login="ngModel">
+              </div>
+            </div>
+            <span class="text-danger mr-auto mb-auto " id="role"> {{form.inputerror.login}} </span>
+          </div>
+
+          <div  >
+            <span class="pt-2"><b>{{'Password'  | translate }}</b></span>
+
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-key grey-text"></i> </div>
+                </div>
+                <input type="password" name="pwd" [(ngModel)]="form.data.password" class="form-control"
+                  placeholder="{{'Enter Password'  | translate }}" password required ngModel  #password="ngModel">
+              </div>
+            </div>
+            <span class="text-danger mr-auto mb-auto " id="role"> {{form.inputerror.password}} </span>
+          </div>
+ 
+          <div  >
+            <span class="pt-2"><b>{{'Mobile'  | translate }}</b></span>
+
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-phone grey-text"></i> </div>
+                </div>
+                <input type="text" name="phone" [(ngModel)]="form.data.mobileNo" class="form-control "
+                  placeholder="{{'Enter Mobile Number' | translate}}" mobileNo required ngModel  #mobileNo="ngModel">
+              </div>
+            </div>
+            <span class="text-danger mr-auto mb-auto " id="role"> {{form.inputerror.mobileNo}} </span>
+          </div>
+
+          
+
+          <div  >
+            <span class="pt-2"><b>{{'DOB'  | translate }}</b></span>
+
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-table grey-text"></i> </div>
+                </div>
+                <input type="date" name="dateB" [(ngModel)]="form.data.dob" 
+                placeholder="Enter Date Of Birth" dateB required ngModel  #dateB="ngModel"
+                class="form-control form-control-sm" required />
+              </div>
+            </div>
+            <span class="text-danger mr-auto mb-auto " id="role"> {{form.inputerror.dob}} </span>
+          </div>
+          
+          <div  >
+            <span class="pt-2"><b>{{'Gender'  | translate }}</b></span>
+
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-venus grey-text"></i> </div>
+                </div>
+                <select class="form-control" name="gender" id="gender" [(ngModel)]="form.data.gender"
+                style="cursor: pointer;"  gender required ngModel  #gender="ngModel">
+                  <option *ngFor="let n of Sel"[value]="n.id" disabled selected hidden>{{n.Name}}</option>
+                  <option value="Male">{{'Male'  | translate }} </option>
+                  <option value="Female">{{'Female'  | translate }} </option>
+                </select>
+              </div>
+            </div>
+            <span class="text-danger mr-auto mb-auto " id="role"> {{form.inputerror.gender}} </span>
+          </div>
+
+
+          <div  >
+            <span class="pt-2"><b>{{'Image'  | translate }}</b>
+              <span class="required-field"></span></span>
+
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-picture-o grey-text"></i> </div>
+                </div>
+                <!-- <input type="file" id="customFile" name="imageId"
+                  (change)="onFileSelect($event.target.files)" accept="image/*"> -->
+
+                  <input type="file" (change)="onFileSelect($event.target.files)" accept="image/*"
+                                    name="pic" class="form-control"  id="pic">
+
+                
+              </div>
+            </div>
+            <span class="text-danger mr-auto mb-auto " id="role"> {{form.inputerror.gender}} </span>
+          </div>
+
+          <!-- <div  >
+            <span class="pt-2"><b>{{'Image'  | translate }}</b>
+              <span class="required-field"></span></span>
+
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-picture-o grey-text"></i> </div>
+                </div>
+                <input type="file" id="customFile" name="imageId"
+                  (change)="onFileSelect($event.target.files)" accept="image/*">
+
+                <span class="alertRedColor"> {{form.inputerror.image}} </span>
+              </div>
+            </div>
+          </div> -->
+
+
+            
+          <div class="row pt-3 pl-3 pb-3 justify-content-center">
+            <div class="pt-2">
+              <button *ngIf="!form.data.id>0" (click)="submit()" 
+                class="btn btn-success mr-2" >
+                {{'Save'  | translate }}</button>
+            </div>
+
+            <div class="pt-2">
+              <button *ngIf="form.data.id>0" (click)="submit()" class="btn btn-success mr-2" >
+                {{'Update' | translate }}</button>
+            </div>
+            <div class="pt-2">
+              <button (click)="forward('/userlist')" type="button" class="btn btn-info mr-1">{{'List' | translate }}
+              </button></div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

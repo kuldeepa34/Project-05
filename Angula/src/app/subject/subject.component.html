@@ -1,0 +1,82 @@
+
+<div class="row mr-0 pt-3 pb-3" >
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body shadow-lg">
+        <form  #adForm='ngForm'>
+          <h2 *ngIf="!form.data.id>0" class="text-secondary text-center font-weight-bold">{{'Add Subject' | translate}}</h2>
+          <h2 *ngIf="form.data.id>0" class="text-secondary text-center font-weight-bold">{{'Update Subject' | translate}}</h2>
+          <div *ngIf="form.error" class="alert alert-danger alert-dismissible">
+            {{form.message}}
+          </div>
+          <div *ngIf="!form.error && form.message != null" class="alert alert-success alert-dismissible">
+            {{form.message}}
+          </div>
+          <div style="padding-top:3%">
+            <span class="pt-2"><b>{{'Subject Name' | translate}}</b>
+              <span class="required-field" *ngIf="subjectName.touched && !subjectName.valid">subject Name Is Required</span></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-file grey-text"></i> </div>
+                </div>
+                <input type="text" name="subjectName" [(ngModel)]="form.data.subjectName" class="form-control"
+                  placeholder="{{'Enter Subject Name' | translate}}" subjectName required ngModel  #subjectName="ngModel">
+              </div>
+            </div>
+            <span class="alertRedColor"> {{form.inputerror.subjectName}} </span>
+          </div>
+
+          <div style="padding-top:3%">
+            <span class="pt-2"><b>{{'Description' | translate}}</b>
+              <span class="required-field"  *ngIf="subjectDescription.touched && !subjectDescription.valid">subject Description Is Required</span></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-bars grey-text"></i> </div>
+                </div>
+                <textarea class="form-control" name="subjectDescription" [(ngModel)]="form.data.subjectDescription"
+                  placeholder="{{'Enter subjectDescription' | translate}}" subjectDescription required ngModel  #subjectDescription="ngModel"></textarea>
+              </div>
+            </div>
+            <span class="alertRedColor"> {{form.inputerror.subjectDescription}} </span>
+          </div>
+
+          <div style="padding-top:3%">
+            <span class="pt-2"><b>{{'Course Name' | translate}}</b>
+              <span class="required-field" *ngIf="courseId.touched && !courseId.valid">course Name Is Required</span></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-file-text-o grey-text"></i> </div>
+                </div>
+                <select class="form-control" name="courseId" [(ngModel)]="form.data.courseId" style="cursor: pointer;" courseId required ngModel  #courseId="ngModel">
+                  <option *ngFor="let n of stu"[value]="n.id" disabled selected hidden>{{n.Name}}</option>
+                  <option *ngFor="let obj of form.preload.courseList" [value]="obj.id">{{obj.name}}</option>
+                </select>
+              </div>
+            </div>
+            <span class="alertRedColor"> {{form.inputerror.subjectName}} </span>
+          </div>
+
+          <div class="row pt-3 pl-3 pb-3 pb-3 justify-content-center">
+            <div class="pt-2">
+              <button *ngIf="!form.data.id>0" (click)="submit()" [disabled]="!adForm.valid" class="btn btn-success mr-2">
+                {{'Save' | translate}}</button>
+            </div>
+            <div class="pt-2">
+              <button *ngIf="form.data.id>0" (click)="submit()" [disabled]="!adForm.valid" class="btn btn-success mr-2">
+                {{'Update' | translate}}</button>
+            </div>
+            <div class="pt-2">
+              <button (click)="forward('/subjectlist')" type="button"
+                class="btn btn-info mr-1">{{'List' | translate}}
+              </button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

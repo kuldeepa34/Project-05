@@ -1,0 +1,7 @@
+footer{
+    position: fixed;
+    background: linear-gradient(to bottom right, #f3b155 0%, #ff5f6d 100%);
+    bottom: 0px;
+    height: 40px;
+    width: 100%;
+}

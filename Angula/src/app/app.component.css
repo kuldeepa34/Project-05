@@ -1,0 +1,25 @@
+.bg-im{
+    
+   
+  background: url("../assets/icon/s.jpg");
+  background-position: center;
+  /* background-size: cover; */
+
+  
+
+    
+}
+.bg-col{
+    background: linear-gradient(to bottom , #ff5e61c7  0%, #ff9966c2 100%);
+    min-height: 786px;
+    
+
+    
+
+    /* background-size: 100%; */
+
+}
+
+/* .d-flex{
+  padding-top: 30px;
+} */

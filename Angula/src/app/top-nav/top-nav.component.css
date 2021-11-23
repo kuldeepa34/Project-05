@@ -1,0 +1,23 @@
+.navbar {
+    /* background-color: #ff5f6d  #ffc371; */
+    background: linear-gradient(to top right, #ffc371 0%, #ff5f6d 100%);
+    margin-bottom: 20px;
+}
+.nav-item{
+    padding-left: 20px;
+
+}
+.dropdown-item{
+    background-color: #ffa292;
+    
+}
+.dropdown-item:hover {
+    background-color: #f86f57;
+  }
+
+  .dropdown-menu{
+    background-color: #ffa292;
+  }
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+  }

@@ -1,0 +1,47 @@
+<div class="row ">
+  <div class="col-3  ">
+      <div class="card">
+          <div class="f-box">
+              <div class="box-dig ">
+                      <div class="kk text-center"><label  class="tab ">Add Faculty</label></div>
+                      
+                      <div class="green "  *ngIf="form.error" > {{form.message}}</div>
+    <div class="red"  *ngIf="!form.error && form.message != null" > {{form.message}}</div>
+
+
+
+<div class="group">
+    <label for="user" class="label">College<span class="required-field"></span></label>
+<select  name="collegeId" [(ngModel)]="form.data.collegeId" style="cursor: pointer;">
+  <option *ngFor="let obj of form.preload.collegeList" [value]="obj.id">{{obj.name}}</option>  class="input"   placeholder="Enter Your College Name"</select> <span class="alertRedColor"> {{form.inputerror.collegeId}} </span> 
+</div>
+
+<div class="group">
+  <label for="user" class="label">Subject<span class="required-field"></span></label>
+<select  name="subjectId" [(ngModel)]="form.data.subjectId" style="cursor: pointer;">
+<option *ngFor="let obj of form.preload.subjectList" [value]="obj.id">{{obj.subjectName}}</option>  class="input"   placeholder="Enter Your Subjec Name"</select> <span class="alertRedColor"> {{form.inputerror.subjecId}} </span> 
+</div>
+
+<div class="group">
+  <label for="user" class="label">Course<span class="required-field"></span></label>
+<select  name="courseId" [(ngModel)]="form.data.courseId" style="cursor: pointer;">
+<option *ngFor="let obj of form.preload.courseList" [value]="obj.id">{{obj.name}}</option>  class="input"   placeholder="Enter Your Course Name"</select> <span class="alertRedColor"> {{form.inputerror.courseId}} </span> 
+</div>
+
+<div class="group"> <label for="user" class="label">First Name<span class="required-field"></span></label> <input type="text" name="firstN" [(ngModel)]="form.data.firstName" class="input" placeholder="Enter Your First Name"> <span class="red"> {{form.inputerror.firstName}} </span></div>
+<div class="group"> <label for="user" class="label">Last Name<span class="required-field"></span></label> <input  type="text" name="lastN" [(ngModel)]="form.data.lastName" class="input" placeholder="Enter Your Last Name"> <span class="red">{{form.inputerror.lastName}}</span> </div>
+<div class="group"> <label for="pass" class="label">Date Of Birth<span class="required-field"></span></label> <input  type="date" name="dateB" [(ngModel)]="form.data.dob" class="input" placeholder="Enter Your Date Of Birth"> <span class="red">{{form.inputerror.dob}}</span> </div>
+<div class="group"> <label for="pass" class="label">Mobile No.<span class="required-field"></span></label> <input  type="text" name="mobileNo" [(ngModel)]="form.data.mobileNo" class="input"  placeholder="Enter Your Mobile No."> <span class="red"> {{form.inputerror.mobileNo}} </span> </div>
+<div class="group"> <label for="user" class="label">Address<span class="required-field"></span></label> <input  type="text" name="address" [(ngModel)]="form.data.address" class="input" placeholder="Enter Your Address"> <span class="red"> {{form.inputerror.address}} </span> </div>
+<div class="group"> <label for="pass" class="label">Gender.<span class="required-field"></span></label> <input  type="text" name="gender" [(ngModel)]="form.data.gender" class="input"  placeholder="Enter Your Gender"> <span class="red"> {{form.inputerror.gender}} </span> </div>
+<div class="group"> <label for="user" class="label">Email<span class="required-field"></span></label> <input  type="text" name="email" [(ngModel)]="form.data.email" class="input" placeholder="Enter Your Email"> <span class="red"> {{form.inputerror.email}} </span> </div>
+ 
+<div class="group"> <label for="pass" class="label">Password.<span class="required-field"></span></label> <input  type="text" name="password" [(ngModel)]="form.data.password" class="input"  placeholder="Enter Your Password"> <span class="red"> {{form.inputerror.password}} </span> </div>                                                                   
+
+<div class="group"> <input type="submit" (click)="submit()" class="button" value="Save"><input type="submit" class="button" value="Reset"></div>
+                          
+
+</div>
+</div>
+</div>
+</div>

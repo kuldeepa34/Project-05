@@ -1,0 +1,73 @@
+
+
+<div class="row " >
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body shadow-lg">
+        <form >
+          <h1 class="text-secondary text-center font-weight-bold">{{'Log in' | translate}}</h1>
+          <!-- <div class="alert alert-danger text-center "  *ngIf="form.error" > Invalid ID/Password</div> -->
+          
+          <div *ngIf="form.error " class="alert alert-danger text-center alert-dismissible">
+            {{form.message}}
+          </div>
+          <div *ngIf="!form.error && form.message != null" class="alert alert-success alert-dismissible">
+           
+            {{form.message}}
+          </div>
+
+          <div style="padding-top:3%">
+            <span class="pt-2"><b>{{'Email Id' | translate}}</b>
+              </span>
+  
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-envelope grey-text"></i> </div>
+                </div>
+                <input type="text" name="login" [(ngModel)]="form.login" class="form-control"
+                  placeholder="{{'Enter Login Id' | translate}}" login required ngModel  #login="ngModel">
+              </div>
+            </div>
+          </div>
+  
+          <span class="text-danger ml-3">{{inputerror.login}}</span> 
+          <div style="padding-top:3%">
+            <span><b>{{'Password' | translate}}</b></span>
+            <div class="col-sm-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-key grey-text "></i> </div>
+                </div>
+                <input type="password" name="pwd" [(ngModel)]="form.password" class="form-control"
+                  placeholder="{{'Enter Password' | translate}}" pwd required ngModel  #pwd="ngModel">
+              </div>
+            </div>
+            <span class="text-danger ml-3">{{inputerror.password}}</span>
+          </div>
+          <div class="row pt-3 pl-3 pb-3 pb-3 justify-content-center">
+            <div class="pt-2 ">
+              <button (click)="signIn()"  class="btn btn-md btn-success">
+                {{'Sign in' | translate}}</button>
+            </div>
+            <div class="pt-2 pl-3 ">
+               <a class="btn  btn-info" [routerLink]="['/signup']">{{'Signup' | translate}}</a>
+            </div>
+            
+            
+            
+          </div>
+          <div class="row  pl-3 pb-3 pb-3 justify-content-center">
+            <div class="pt-2">
+          <a [routerLink]="['/forgotpassword']">{{'Forgot Password' | translate}} </a> </div>
+            
+        </div>
+        </form>
+      </div>
+  
+    </div>
+  
+  </div>
+  </div>
+  
